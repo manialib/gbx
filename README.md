@@ -1,5 +1,6 @@
 # Manialib\Gbx
 
+Manialib\Gbx is a PHP package manipulating gbx metadata files 
 
 ## Beta
 
@@ -7,12 +8,14 @@ This is a work in progress. As long as we don't release a stable version, we mig
 
 ## Features
 
-- Convert maniaplanet map xml part into immutable object.
+- Expose a Map.Gbx file metadata through object interface
+- Extract thumbnail from a Map.Gbx file
 
 
 ## Requirements
 
 - PHP 5.5+
+- ext-gd
 
 ## Installation
 
@@ -28,31 +31,19 @@ This is a work in progress. As long as we don't release a stable version, we mig
 
 ## Usage
 
-You can get map's information from map content
+You can get map's information from a map
 
 ```php
-use Manialib\Gbx\Map\Parser;
-
-$parser = new Parser();
+use Manialib\Gbx\Map;
 
 $content = file_get_contents('/path/to/my/map.map.gbx');
-$map = $parser->parseString($content);
-//save the map thumbnail
-file_put_contents('/path/to/my/thumbnail.jpg', $map->getThumbnail());
-//get map author
-$author = $map->getHeader()->getIdent()->getAuthor();
-```
-
-You can also get map's information from a file
-
-```php
-use Manialib\Gbx\Map\Parser;
-
-$parser = new Parser();
-$map = $parser->parseFile('/path/to/my/map.map.gbx');
+$map = Map::loadString($content);
+// or
+$map = Map::loadFile('/path/to/my/map.map.gbx');
 
 //save the map thumbnail
-file_put_contents('/path/to/my/thumbnail.jpg', $map->getThumbnail());
+$map->getThumbnail()->saveJpg('/path/to/my/thumbnail.jpg');
+
 //get map author
 $author = $map->getHeader()->getIdent()->getAuthor();
 ```
