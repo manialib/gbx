@@ -1,0 +1,34 @@
+{
+  "name": "manialib/gbx",
+  "type": "library",
+  "description": "Manialib/Gbx is a PHP package to manipulate Maniaplanet Gbx files metadata",
+  "keywords": [
+    "Ubisoft",
+    "Nadeo",
+    "Maniaplanet",
+    "Shootmania",
+    "Trackmania",
+    "Manialib"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/manialib/gbx",
+  "authors": [
+    {
+      "name": "Nadeo",
+      "email": "contact@nadeo.com",
+      "homepage": "http://www.nadeo.com/"
+    }
+  ],
+  "autoload": {
+    "psr-4": {"Manialib\\": "src/Manialib/"}
+  },
+  "require": {
+    "php": ">=5.5",
+    "ext-gd": "*"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "4.0-dev"
+    }
+  }
+}
