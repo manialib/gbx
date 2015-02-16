@@ -1,6 +1,6 @@
 # Manialib\Gbx
 
-Manialib\Gbx is a PHP package manipulating gbx metadata files 
+Manialib\Gbx is a PHP package manipulating gbx files metadata
 
 ## Beta
 
