@@ -3,8 +3,8 @@
 
 namespace Manialib\Gbx\Map;
 
-
-class Thumbnail {
+class Thumbnail
+{
     protected $rawData;
 
     public function __construct($rawData)

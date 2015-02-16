@@ -8,7 +8,6 @@
 
 namespace Manialib\Gbx\Map;
 
-
 class Ident
 {
     /**
@@ -34,7 +33,7 @@ class Ident
      * @param string $author
      * @param string $authorZone
      */
-    function __construct($uid, $name, $author, $authorZone)
+    public function __construct($uid, $name, $author, $authorZone)
     {
         $this->author = $author;
         $this->authorZone = $authorZone;
@@ -73,5 +72,4 @@ class Ident
     {
         return $this->uid;
     }
-
 }

@@ -30,7 +30,9 @@
     "ext-gd": "*"
   },
   "require-dev": {
-    "phpunit/phpunit": "~4.4"
+    "phpunit/phpunit": "~4.4",
+    "squizlabs/php_codesniffer": "@stable",
+    "fabpot/php-cs-fixer": "@stable"
   },
   "archive": {
     "exclude": ["/tests"]

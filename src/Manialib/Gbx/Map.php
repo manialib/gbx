@@ -45,7 +45,7 @@ class Map
      * @param Thumbnail $thumbnail
      * @param string $comments
      */
-    function __construct(Header $header, Thumbnail $thumbnail, $comments)
+    public function __construct(Header $header, Thumbnail $thumbnail, $comments)
     {
         $this->header = $header;
         $this->thumbnail = $thumbnail;

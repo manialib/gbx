@@ -8,7 +8,6 @@
 
 namespace Manialib\Gbx\Map;
 
-
 use Manialib\Gbx\Map;
 
 class Parser
@@ -143,5 +142,4 @@ class Parser
 
         return $attributes;
     }
-
-} 
+}

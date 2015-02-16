@@ -8,7 +8,6 @@
 
 namespace Manialib\Gbx\Map;
 
-
 class Header
 {
     const EXEBUILD_FORMAT = 'Y-m-d_G_i';
@@ -67,7 +66,7 @@ class Header
      * @param Dep[] $deps
      * @param PlayerModel $playermodel
      */
-    function __construct($type, $exever, $exebuild, $title, $lightmap, Ident $ident,Desc $desc, Times $times, array $deps, PlayerModel $playermodel = null)
+    public function __construct($type, $exever, $exebuild, $title, $lightmap, Ident $ident, Desc $desc, Times $times, array $deps, PlayerModel $playermodel = null)
     {
         $this->deps = $deps;
         $this->desc = $desc;
@@ -160,6 +159,4 @@ class Header
     {
         return $this->type;
     }
-
-
-} 
+}
