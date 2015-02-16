@@ -36,6 +36,10 @@ class Desc
      */
     protected $displaycost;
     /**
+     * @var string
+     */
+    protected $mod;
+    /**
      * @var bool
      */
     protected $hasghostblocks;
@@ -51,7 +55,7 @@ class Desc
      * @param int $displaycost
      * @param bool $hasghostblocks
      */
-    public function __construct($envir, $mood, $type, $mapType, $mapstyle, $validated, $nblaps, $displaycost, $hasghostblocks)
+    public function __construct($envir, $mood, $type, $mapType, $mapstyle, $validated, $nblaps, $displaycost, $mod, $hasghostblocks)
     {
         $this->envir = $envir;
         $this->mood = $mood;
@@ -61,6 +65,7 @@ class Desc
         $this->validated = $validated;
         $this->nbLaps = $nblaps;
         $this->displaycost = $displaycost;
+        $this->mod = $mod;
         $this->hasghostblocks = $hasghostblocks;
     }
 
@@ -129,10 +134,18 @@ class Desc
     }
 
     /**
+     * @return string
+     */
+    public function getMod()
+    {
+        return $this->mod;
+    }
+
+    /**
      * @return bool
      */
     public function getHasghostblocks()
     {
-        return $this->hasGhostsBlocks;
+        return $this->hasghostblocks;
     }
 }

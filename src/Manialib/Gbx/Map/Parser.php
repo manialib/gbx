@@ -72,6 +72,7 @@ class Parser
             (bool)$descAttributes['validated'],
             (int)$descAttributes['nblaps'],
             (int)$descAttributes['displaycost'],
+            $descAttributes['mod'],
             (bool)$descAttributes['hasghostblocks']
         );
 
