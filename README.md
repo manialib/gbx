@@ -1,5 +1,9 @@
 # Manialib\Gbx
 
+[![Packagist Version](https://img.shields.io/packagist/v/manialib/gbx.svg?style=flat-square)](https://packagist.org/packages/manialib/gbx)
+[![Total Downloads](https://img.shields.io/packagist/dt/manialib/gbx.svg?style=flat-square)](https://packagist.org/packages/manialib/gbx)
+[![Build Status](https://img.shields.io/travis/manialib/gbx.svg?style=flat-square)](https://travis-ci.org/manialib/gbx)
+
 Manialib\Gbx is a PHP package manipulating gbx files metadata
 
 ## Beta
