@@ -4,7 +4,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/manialib/gbx.svg?style=flat-square)](https://packagist.org/packages/manialib/gbx)
 [![Build Status](https://img.shields.io/travis/manialib/gbx.svg?style=flat-square)](https://travis-ci.org/manialib/gbx)
 
-Manialib\Gbx is a PHP package manipulating gbx files metadata
+Manialib\Gbx is a PHP package for reading gbx file metadata
 
 ## Beta
 
@@ -12,14 +12,14 @@ This is a work in progress. As long as we don't release a stable version, we mig
 
 ## Features
 
-- Expose a Map.Gbx file metadata through object interface
-- Extract thumbnail from a Map.Gbx file
+- Expose Map.Gbx metadata through an object interface
+- Extract JPG thumbnail from Map.Gbx file
 
 
 ## Requirements
 
 - PHP 5.5+
-- ext-gd
+- PHP GD extension
 
 ## Installation
 
@@ -35,14 +35,9 @@ This is a work in progress. As long as we don't release a stable version, we mig
 
 ## Usage
 
-You can get map's information from a map
-
 ```php
 use Manialib\Gbx\Map;
 
-$content = file_get_contents('/path/to/my/map.map.gbx');
-$map = Map::loadString($content);
-// or
 $map = Map::loadFile('/path/to/my/map.map.gbx');
 
 //save the map thumbnail
