@@ -5,7 +5,7 @@
 [![Build Status](https://img.shields.io/travis/manialib/gbx.svg?style=flat-square)](https://travis-ci.org/manialib/gbx)
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/f3cc9ab7-224a-4fb7-b571-ac057ca22898.svg?style=flat-square)](https://insight.sensiolabs.com/projects/f3cc9ab7-224a-4fb7-b571-ac057ca22898)
 
-Manialib\Gbx is a PHP package for reading gbx file metadata
+Manialib\Gbx is a PHP package for reading Gbx file metadata
 
 ## Beta
 
@@ -13,18 +13,25 @@ This is a work in progress. As long as we don't release a stable version, we mig
 
 ## Features
 
-- Expose Map.Gbx metadata through an object interface
-- Extract JPG thumbnail from Map.Gbx file
+### Map.Gbx files (Trackmania tracks & Shootmania maps)
 
+- Access metadata with a simple object interface
+- Extract JPG thumbnail
 
-## Requirements
+### Roadmap
+
+- We'll add other features depending on what we and others need.
+- [Feel free to give feedback and request features in the forum](https://forum.maniaplanet.com/viewtopic.php?f=40&t=30424)
+- See the [change log](CHANGELOG.md) for the latest updates.
+
+## Install
+
+### Requirements
 
 - PHP 5.5+
 - PHP GD extension
 
-## Installation
-
-[Install via Composer](https://getcomposer.org/):
+### [Install via Composer](https://getcomposer.org/):
 
 ```json
 {
