@@ -7,31 +7,23 @@
 
 Manialib\Gbx is a PHP package for reading Gbx file metadata
 
-## Beta
-
-This is a work in progress. As long as we don't release a stable version, we might break stuff at any point. If this is a problem, feel free to open an issue and we'll try to help.
-
 ## Features
 
-### Map.Gbx files (Trackmania tracks & Shootmania maps)
+- **Map.Gbx:** Access metadata with a simple object interface
+- **Map.Gbx:** Extract JPG thumbnail
 
-- Access metadata with a simple object interface
-- Extract JPG thumbnail
+## Beta
 
-### Roadmap
+- **This is a work in progress.** As long as we don't release a stable version, we might break stuff at any point.
+- We're open to discussions about features and stability!
+- Discuss it here: https://forum.maniaplanet.com/viewtopic.php?f=40&t=30424
 
-- We'll add other features depending on what we and others need.
-- [Feel free to give feedback and request features in the forum](https://forum.maniaplanet.com/viewtopic.php?f=40&t=30424)
-- See the [change log](CHANGELOG.md) for the latest updates.
-
-## Install
-
-### Requirements
+## Requirements
 
 - PHP 5.5+
 - PHP GD extension
 
-### [Install via Composer](https://getcomposer.org/):
+## [Install via Composer](https://getcomposer.org/)
 
 ```json
 {
