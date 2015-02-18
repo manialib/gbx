@@ -25,7 +25,9 @@ Manialib\Gbx is a PHP package for reading Gbx file metadata
 - PHP 5.5+
 - PHP GD extension
 
-## [Install via Composer](https://getcomposer.org/)
+## Install
+
+[Install via Composer](https://getcomposer.org/)
 
 ```json
 {
