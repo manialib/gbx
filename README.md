@@ -14,9 +14,11 @@ Manialib\Gbx is a PHP package for reading Gbx file metadata
 
 ## Beta
 
-- **This is a work in progress.** As long as we don't release a stable version, we might break stuff at any point.
-- We're open to discussions about features and stability!
-- Discuss it here: https://forum.maniaplanet.com/viewtopic.php?f=40&t=30424
+- **This is a work in progress.** 
+- We might break stuff at any point.
+- If you need a stable version, feel free to ask us.
+- If you need a new feature, feel free to ask us.
+- Discuss it with us: https://forum.maniaplanet.com/viewtopic.php?f=40&t=30424
 
 ## Requirements
 
