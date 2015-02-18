@@ -3,6 +3,7 @@
 [![Packagist Version](https://img.shields.io/packagist/v/manialib/gbx.svg?style=flat-square)](https://packagist.org/packages/manialib/gbx)
 [![Total Downloads](https://img.shields.io/packagist/dt/manialib/gbx.svg?style=flat-square)](https://packagist.org/packages/manialib/gbx)
 [![Build Status](https://img.shields.io/travis/manialib/gbx.svg?style=flat-square)](https://travis-ci.org/manialib/gbx)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/f3cc9ab7-224a-4fb7-b571-ac057ca22898.svg?style=flat-square)](https://insight.sensiolabs.com/projects/f3cc9ab7-224a-4fb7-b571-ac057ca22898)
 
 Manialib\Gbx is a PHP package for reading gbx file metadata
 
