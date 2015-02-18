@@ -29,7 +29,7 @@ This is a work in progress. As long as we don't release a stable version, we mig
 ```json
 {
 	"require": {
-        "manialib/gbx": "dev-master"
+        "manialib/gbx": "4.0.0-beta"
     }
 }
 ```
