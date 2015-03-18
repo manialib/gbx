@@ -45,7 +45,7 @@ class Parser
 
         $domDocument = new \DOMDocument();
         $internalError = libxml_use_internal_errors(true);
-        $domDocument->loadHTML($header);
+        $domDocument->loadHTML('<?xml encoding="UTF-8">' . $header);
         libxml_use_internal_errors($internalError);
 
         $headerAttributes = static::getNodeAttributesValues($domDocument->getElementsByTagName('header')->item(0));
