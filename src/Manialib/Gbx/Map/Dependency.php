@@ -1,7 +1,7 @@
 <?php
 namespace Manialib\Gbx\Map;
 
-class Dep
+class Dependency
 {
     /**
      * @var string
