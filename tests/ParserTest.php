@@ -10,9 +10,7 @@ class ParserTest extends PHPUnit_Framework_TestCase
      */
     public function propertyProvider()
     {
-        $rawData = file_get_contents(__DIR__.'/Valley - Mini-2.Map.Gbx');
-
-        $map = Parser::parseString($rawData);
+        $map = Parser::parseFile(__DIR__ . '/Valley - Mini-2.Map.Gbx');
         return [
             //Header
             [$map->getExeVersion(), '3.3.0'],
