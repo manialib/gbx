@@ -2,7 +2,6 @@
 namespace Manialib\Gbx;
 
 use Manialib\Gbx\Map\Dependency;
-use Manialib\Gbx\Map\Header;
 use Manialib\Gbx\Map\Parser;
 use Manialib\Gbx\Map\Thumbnail;
 
@@ -140,21 +139,21 @@ class Map
      */
     public function __construct(array $properties)
     {
-        foreach($properties as $key => $value) {
-            if(!property_exists($this, $key)) {
+        foreach ($properties as $key => $value) {
+            if (!property_exists($this, $key)) {
                 throw new \InvalidArgumentException(sprintf('property %s does not exist', $key));
             }
 
-            if($key == 'thumbnail') {
-                if(!($value instanceof Thumbnail)) {
+            if ($key == 'thumbnail') {
+                if (!($value instanceof Thumbnail)) {
                     throw new \InvalidArgumentException(sprintf('Thumbnail is not an instance of %s', Thumbnail::class));
                 }
             } elseif ($key == 'dependencies') {
-                if(!is_array($value)) {
+                if (!is_array($value)) {
                     throw new \InvalidArgumentException(sprintf('Dependencies must be an array of %s', Dependency::class));
                 }
-                foreach($value as $dependency) {
-                    if(!($dependency instanceof Dependency)) {
+                foreach ($value as $dependency) {
+                    if (!($dependency instanceof Dependency)) {
                         throw new \InvalidArgumentException(sprintf('Dependencies must be an array of %s', Dependency::class));
                     }
                 }
