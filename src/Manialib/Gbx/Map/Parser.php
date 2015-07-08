@@ -114,7 +114,7 @@ class Parser
         $properties['exeVersion'] = array_key_exists('exever', $header) ? $header['exever'] : null;
         $properties['exeBuild'] = array_key_exists('exebuild', $header) ? $header['exebuild'] : null;
         $properties['title'] = array_key_exists('title', $header) ? $header['title'] : null;
-        $properties['lightmap'] = array_key_exists('lightmap', $header) ? $header['lightmap'] : null;
+        $properties['lightmap'] = array_key_exists('lightmap', $header) ? (int)$header['lightmap'] : null;
 
         $ident = static::getNodeAttributesValues($domDocument->getElementsByTagName('ident')->item(0));
         $properties['uid'] = array_key_exists('uid', $ident) ? $ident['uid'] : null;

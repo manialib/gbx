@@ -20,7 +20,7 @@ class Map
      */
     protected $title;
     /**
-     * @var string
+     * @var int
      */
     protected $lightmap;
     /**
@@ -187,7 +187,7 @@ class Map
     }
 
     /**
-     * @return string
+     * @return int
      */
     public function getLightmap()
     {
