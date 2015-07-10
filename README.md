@@ -32,7 +32,7 @@ Manialib\Gbx is a PHP package for reading Gbx file metadata
 ```json
 {
 	"require": {
-        "manialib/gbx": "4.0.0-beta"
+        "manialib/gbx": "4.0.0-beta1"
     }
 }
 ```
@@ -48,7 +48,7 @@ $map = Map::loadFile('/path/to/my/map.map.gbx');
 $map->getThumbnail()->saveJpg('/path/to/my/thumbnail.jpg');
 
 //get map author
-$author = $map->getHeader()->getIdent()->getAuthor();
+$author = $map->getAuthor();
 ```
 
 ## Development guidelines
