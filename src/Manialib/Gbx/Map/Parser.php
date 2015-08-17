@@ -134,8 +134,10 @@ class Parser
         $properties['mod'] = array_key_exists('mod', $desc) ? $desc['mod'] : null;
         $properties['hasGhostBlocks'] = array_key_exists('hasghostblocks', $desc) ? (bool)$desc['hasghostblocks'] : null;
 
-        $playerModel = static::getNodeAttributesValues($domDocument->getElementsByTagName('playermodel')->item(0));
-        $properties['playerModel'] = array_key_exists('id', $playerModel) ? $playerModel['id'] : null;
+        if ($domDocument->getElementsByTagName('playermodel')->length) {
+            $playerModel = static::getNodeAttributesValues($domDocument->getElementsByTagName('playermodel')->item(0));
+            $properties['playerModel'] = array_key_exists('id', $playerModel) ? $playerModel['id'] : null;
+        }
 
         $times = static::getNodeAttributesValues($domDocument->getElementsByTagName('times')->item(0));
         $properties['bronzeMedal'] = array_key_exists('bronze', $times) ? (int)$times['bronze'] : null;
