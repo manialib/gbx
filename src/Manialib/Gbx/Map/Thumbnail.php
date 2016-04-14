@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Manialib\Gbx\Map;
 
 class Thumbnail

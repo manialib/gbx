@@ -1,4 +1,5 @@
 <?php
+
 namespace Manialib\Gbx;
 
 use Manialib\Gbx\Map\Dependency;
@@ -377,6 +378,4 @@ class Map
     {
         return $this->comments;
     }
-
-
 }

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Philippe
- * Date: 12/12/2014
- * Time: 11:48
- */
 
 namespace Manialib\Gbx\Map;
 
@@ -46,13 +40,15 @@ class Parser
     {
         self::ignore($fileHandler, 9);
         $classId = self::fetchLong($fileHandler);
-        if ($classId != 0x03043000)
+        if ($classId != 0x03043000) {
             throw new \InvalidArgumentException('File is not a map');
+        }
         self::ignore($fileHandler, 4);
         $nbChunks = self::fetchLong($fileHandler);
         $chunkInfos = array();
-        for (; $nbChunks > 0; --$nbChunks)
+        for (; $nbChunks > 0; --$nbChunks) {
             $chunkInfos[self::fetchLong($fileHandler)] = self::fetchLong($fileHandler);
+        }
 
         $properties = [];
         foreach ($chunkInfos as $chunkId => $chunkSize) {
@@ -167,9 +163,9 @@ class Parser
             $thumbSize = self::fetchLong($fp);
             self::ignore($fp, strlen('<Thumbnail.jpg>'));
             if ($thumbSize) {
-                if (!extension_loaded('gd'))
+                if (!extension_loaded('gd')) {
                     self::ignore($fp, $thumbSize);
-                else {
+                } else {
                     $gdImage = imagecreatefromstring(fread($fp, $thumbSize));
                     imageflip($gdImage, IMG_FLIP_VERTICAL);
                     ob_start();
