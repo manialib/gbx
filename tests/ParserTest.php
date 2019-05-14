@@ -1,10 +1,10 @@
 <?php
 
 use Manialib\Gbx\Map\Parser;
+use PHPUnit\Framework\TestCase;
 
-class ParserTest extends PHPUnit_Framework_TestCase
+class ParserTest extends TestCase
 {
-
     /**
      * @return array
      */
@@ -16,7 +16,7 @@ class ParserTest extends PHPUnit_Framework_TestCase
             [$map->getExeVersion(), '3.3.0'],
             [$map->getExeBuild(), '2014-11-21_17_57'],
             [$map->getTitle(), 'TMValley'],
-            [$map->getLightmap(), '6'],
+            [$map->getLightmap(), 6],
             //Ident
             [$map->getUid(), 'Qeca3ztXLSQD7jx3xO40wrzmLH1'],
             [$map->getName(), '$s$w$fffValley $f40- $0f1Mini$f40-$0f12'],
@@ -29,7 +29,7 @@ class ParserTest extends PHPUnit_Framework_TestCase
             [$map->getMaptype(), 'Trackmania\Race'],
             [$map->getMapstyle(), ''],
             [$map->isValidated(), true],
-            [$map->getNbLaps(), '0'],
+            [$map->getNbLaps(), 0],
             [$map->getDisplaycost(), 1863],
             [$map->getMod(), ''],
             [$map->hasGhostBlocks(), true],
@@ -67,6 +67,6 @@ class ParserTest extends PHPUnit_Framework_TestCase
      */
     public function testProperty($input, $expected)
     {
-        $this->assertEquals($expected, $input);
+        $this->assertSame($expected, $input);
     }
 }
