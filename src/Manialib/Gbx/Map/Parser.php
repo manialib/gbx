@@ -107,47 +107,47 @@ class Parser
         libxml_use_internal_errors($internalError);
 
         $header = static::getNodeAttributesValues($domDocument->getElementsByTagName('header')->item(0));
-        $properties['exeVersion'] = array_key_exists('exever', $header) ? $header['exever'] : null;
-        $properties['exeBuild'] = array_key_exists('exebuild', $header) ? $header['exebuild'] : null;
-        $properties['title'] = array_key_exists('title', $header) ? $header['title'] : null;
-        $properties['lightmap'] = array_key_exists('lightmap', $header) ? (int)$header['lightmap'] : null;
+        $properties['exeVersion'] = $header['exever'] ?? null;
+        $properties['exeBuild'] = $header['exebuild'] ?? null;
+        $properties['title'] = $header['title'] ?? null;
+        $properties['lightmap'] = (int) $header['lightmap'] ?? null;
 
         $ident = static::getNodeAttributesValues($domDocument->getElementsByTagName('ident')->item(0));
-        $properties['uid'] = array_key_exists('uid', $ident) ? $ident['uid'] : null;
-        $properties['name'] = array_key_exists('name', $ident) ? $ident['name'] : null;
-        $properties['author'] = array_key_exists('author', $ident) ? $ident['author'] : null;
-        $properties['authorZone'] = array_key_exists('authorzone', $ident) ? $ident['authorzone'] : null;
+        $properties['uid'] = $ident['uid'] ?? null;
+        $properties['name'] = $ident['name'] ?? null;
+        $properties['author'] = $ident['author'] ?? null;
+        $properties['authorZone'] = $ident['authorzone'] ?? null;
 
         $desc = static::getNodeAttributesValues($domDocument->getElementsByTagName('desc')->item(0));
-        $properties['environment'] = array_key_exists('envir', $desc) ? $desc['envir'] : null;
-        $properties['mood'] = array_key_exists('mood', $desc) ? $desc['mood'] : null;
-        $properties['type'] = array_key_exists('mood', $desc) ? $desc['type'] : null;
-        $properties['mapType'] = array_key_exists('maptype', $desc) ? $desc['maptype'] : null;
-        $properties['mapStyle'] = array_key_exists('mapstyle', $desc) ? $desc['mapstyle'] : null;
-        $properties['validated'] = array_key_exists('validated', $desc) ? (bool)$desc['validated'] : null;
-        $properties['nbLaps'] = array_key_exists('nblaps', $desc) ? (int)$desc['nblaps'] : null;
-        $properties['displayCost'] = array_key_exists('displaycost', $desc) ? (int)$desc['displaycost'] : null;
-        $properties['mod'] = array_key_exists('mod', $desc) ? $desc['mod'] : null;
-        $properties['hasGhostBlocks'] = array_key_exists('hasghostblocks', $desc) ? (bool)$desc['hasghostblocks'] : null;
+        $properties['environment'] = $desc['envir'] ?? null;
+        $properties['mood'] = $desc['mood'] ?? null;
+        $properties['type'] = $desc['type'] ?? null;
+        $properties['mapType'] = $desc['maptype'] ?? null;
+        $properties['mapStyle'] = $desc['mapstyle'] ?? null;
+        $properties['validated'] = (bool) $desc['validated'] ?? null;
+        $properties['nbLaps'] = (int) $desc['nblaps'] ?? null;
+        $properties['displayCost'] = (int) $desc['displaycost'] ?? null;
+        $properties['mod'] = $desc['mod'] ?? null;
+        $properties['hasGhostBlocks'] = (bool) $desc['hasghostblocks'] ?? null;
 
         if ($domDocument->getElementsByTagName('playermodel')->length) {
             $playerModel = static::getNodeAttributesValues($domDocument->getElementsByTagName('playermodel')->item(0));
-            $properties['playerModel'] = array_key_exists('id', $playerModel) ? $playerModel['id'] : null;
+            $properties['playerModel'] = $playerModel['id'] ?? null;
         }
 
         $times = static::getNodeAttributesValues($domDocument->getElementsByTagName('times')->item(0));
-        $properties['bronzeMedal'] = array_key_exists('bronze', $times) ? (int)$times['bronze'] : null;
-        $properties['silverMedal'] = array_key_exists('silver', $times) ? (int)$times['silver'] : null;
-        $properties['goldMedal'] = array_key_exists('gold', $times) ? (int)$times['gold'] : null;
-        $properties['authorTime'] = array_key_exists('authortime', $times) ? (int)$times['authortime'] : null;
-        $properties['authorScore'] = array_key_exists('authorscore', $times) ? (int)$times['authorscore'] : null;
+        $properties['bronzeMedal'] = (int) $times['bronze'] ?? null;
+        $properties['silverMedal'] = (int) $times['silver'] ?? null;
+        $properties['goldMedal'] = (int) $times['gold'] ?? null;
+        $properties['authorTime'] = (int) $times['authortime'] ?? null;
+        $properties['authorScore'] = (int) $times['authorscore'] ?? null;
 
         $dependenciesNode = $domDocument->getElementsByTagName('deps')->item(0);
         foreach ($dependenciesNode->childNodes as $childNode) {
             if ($childNode->nodeName == 'dep') {
                 $depAttributes = static::getNodeAttributesValues($childNode);
                 $file = $depAttributes['file'];
-                $url = array_key_exists('url', $depAttributes) ? $depAttributes['url'] : '';
+                $url = $depAttributes['url'] ?? '';
                 $properties['dependencies'][] = new Dependency($file, $url);
             }
         }
