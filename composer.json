@@ -34,10 +34,5 @@
   },
   "archive": {
     "exclude": ["/tests"]
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "4.1-dev"
-    }
   }
 }
