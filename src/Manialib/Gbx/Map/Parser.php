@@ -166,12 +166,11 @@ class Parser
                 if (!extension_loaded('gd')) {
                     self::ignore($fp, $thumbSize);
                 } else {
+                    $temporaryStream = fopen('php://memory', 'wb+');
                     $gdImage = imagecreatefromstring(fread($fp, $thumbSize));
                     imageflip($gdImage, IMG_FLIP_VERTICAL);
-                    ob_start();
-                    imagejpeg($gdImage, null, 100);
-                    $properties['thumbnail'] = new Thumbnail(ob_get_contents());
-                    ob_end_clean();
+                    imagejpeg($gdImage, $temporaryStream, 100);
+                    $properties['thumbnail'] = new Thumbnail(stream_get_contents($temporaryStream, -1, 0));
                 }
             }
             self::ignore($fp, strlen('</Thumbnail.jpg>'));
