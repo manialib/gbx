@@ -40,7 +40,7 @@ class Parser
     {
         self::ignore($fileHandler, 9);
         $classId = self::fetchLong($fileHandler);
-        if ($classId != 0x03043000) {
+        if (!in_array($classId, [0x03043000, 0x24003000, 0x21080000])) {
             throw new \InvalidArgumentException('File is not a map');
         }
         self::ignore($fileHandler, 4);
@@ -53,10 +53,10 @@ class Parser
         $properties = [];
         foreach ($chunkInfos as $chunkId => $chunkSize) {
             switch ($chunkId) {
-                case 0x03043005:
+                case $classId + 0x05:
                     $properties = array_merge($properties, self::parseXMLHeader($fileHandler));
                     break;
-                case 0x03043007:
+                case $classId + 0x07:
                     $properties = array_merge($properties, self::parseThumbnailAndComment($fileHandler));
                     break;
                 default:
