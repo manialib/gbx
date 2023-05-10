@@ -8,7 +8,9 @@ class ParserTest extends TestCase
     public function testParseBigMap()
     {
         $map = Parser::parseFile(__DIR__ . '/fixtures/bigMap.Map.Gbx');
-        $map->getThumbnail();
+
+        //87562 is quite arbitrary and what I got frm my naive implementation. It might be also wrong
+        $this->assertSame(87562, strlen($map->getComments()));
     }
 
     public function testParseMap()
