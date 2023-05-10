@@ -5,9 +5,17 @@ use PHPUnit\Framework\TestCase;
 
 class ParserTest extends TestCase
 {
+    public function testParseBigMap()
+    {
+        $map = Parser::parseFile(__DIR__ . '/fixtures/bigMap.Map.Gbx');
+
+        //87562 is quite arbitrary and what I got frm my naive implementation. It might be also wrong
+        $this->assertSame(87562, strlen($map->getComments()));
+    }
+
     public function testParseMap()
     {
-        $map = Parser::parseFile(__DIR__ . '/Valley - Mini-2.Map.Gbx');
+        $map = Parser::parseFile(__DIR__ . '/fixtures/Valley - Mini-2.Map.Gbx');
 
         $this->assertSame($map->getExeVersion(), '3.3.0');
         $this->assertSame($map->getExeBuild(), '2014-11-21_17_57');

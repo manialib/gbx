@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <phpunit colors="true" verbose="true" bootstrap="vendor/autoload.php">
+    <php>
+        <!-- We set a somewhat low memory limit to help debug the memory usage with faulty maps -->
+        <ini name="memory_limit" value="128M" />
+    </php>
     <testsuites>
         <testsuite name="Manialib Gbx Tests">
             <directory>./tests</directory>

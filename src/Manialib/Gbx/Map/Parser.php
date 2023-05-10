@@ -57,7 +57,7 @@ class Parser
                     $properties = array_merge($properties, self::parseXMLHeader($fileHandler));
                     break;
                 case 0x03043007:
-                    $properties = array_merge($properties, self::parseThumbnailAndComment($fileHandler));
+                    $properties = array_merge($properties, self::parseThumbnailAndComment($fileHandler, $chunkSize & 0x7fffffff));
                     break;
                 default:
                     self::ignore($fileHandler, $chunkSize & 0x7fffffff);
@@ -87,9 +87,16 @@ class Parser
         return $long[1];
     }
 
-    protected static function fetchString($fp)
+    protected static function fetchString($fp, ?int $maxPosition = null)
     {
         $length = self::fetchLong($fp);
+        if ($maxPosition !== null) {
+            $currentPosition = ftell($fp);
+            if ($currentPosition + $length > $maxPosition) {
+                $length = $maxPosition - $currentPosition;
+            }
+
+        }
         return $length ? fread($fp, $length) : '';
     }
 
@@ -155,8 +162,9 @@ class Parser
         return $properties;
     }
 
-    protected static function parseThumbnailAndComment($fp)
+    protected static function parseThumbnailAndComment($fp, int $chunkSize)
     {
+        $maxPosition = ftell($fp) + $chunkSize;
         $haveThumbnail = self::fetchLong($fp);
         $properties = [];
         if ($haveThumbnail) {
@@ -175,7 +183,7 @@ class Parser
             }
             self::ignore($fp, strlen('</Thumbnail.jpg>'));
             self::ignore($fp, strlen('<Comments>'));
-            $properties['comments'] = self::fetchString($fp);
+            $properties['comments'] = self::fetchString($fp, $maxPosition - strlen('</Comments>'));
             self::ignore($fp, strlen('</Comments>'));
         }
         return $properties;
