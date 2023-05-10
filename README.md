@@ -2,8 +2,6 @@
 
 [![Packagist Version](https://img.shields.io/packagist/v/manialib/gbx.svg?style=flat-square)](https://packagist.org/packages/manialib/gbx)
 [![Total Downloads](https://img.shields.io/packagist/dt/manialib/gbx.svg?style=flat-square)](https://packagist.org/packages/manialib/gbx)
-[![Build Status](https://img.shields.io/travis/manialib/gbx.svg?style=flat-square)](https://travis-ci.org/manialib/gbx)
-[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/f3cc9ab7-224a-4fb7-b571-ac057ca22898.svg?style=flat-square)](https://insight.sensiolabs.com/projects/f3cc9ab7-224a-4fb7-b571-ac057ca22898)
 
 Manialib\Gbx is a PHP package for reading Gbx file metadata
 
@@ -18,11 +16,10 @@ Manialib\Gbx is a PHP package for reading Gbx file metadata
 - We might break stuff at any point.
 - If you need a stable version, feel free to ask us.
 - If you need a new feature, feel free to ask us.
-- Discuss it with us: https://forum.maniaplanet.com/viewtopic.php?f=40&t=30424
 
 ## Requirements
 
-- PHP 5.5+
+- PHP 8.0+
 - PHP GD extension
 
 ## Install
@@ -32,7 +29,7 @@ Manialib\Gbx is a PHP package for reading Gbx file metadata
 ```json
 {
 	"require": {
-        "manialib/gbx": "4.0.0-beta1"
+        "manialib/gbx": "^5.0"
     }
 }
 ```
